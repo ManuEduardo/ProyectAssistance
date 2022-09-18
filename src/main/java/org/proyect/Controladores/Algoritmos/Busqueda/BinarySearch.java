@@ -18,15 +18,19 @@ public class BinarySearch implements Buscar {
         int inicio = 0;
         int fin = lista.length - 1;
         int pos;
-        while (inicio <= fin) {
-            pos = (inicio+fin) / 2;
-            if ( (Integer) lista[pos].ObtenerAtributo(tipoObjetivo) == Integer.parseInt(objetivo) )
-                return pos;
-            else if ( (Integer)lista[pos].ObtenerAtributo(tipoObjetivo) < Integer.parseInt(objetivo)) {
-                inicio = pos+1;
-            } else {
-                fin = pos-1;
+        try {
+            while (inicio <= fin) {
+                pos = (inicio+fin) / 2;
+                if ( (Integer) lista[pos].ObtenerAtributo(tipoObjetivo) == Integer.parseInt(objetivo) )
+                    return pos;
+                else if ( (Integer)lista[pos].ObtenerAtributo(tipoObjetivo) < Integer.parseInt(objetivo)) {
+                    inicio = pos+1;
+                } else {
+                    fin = pos-1;
+                }
             }
+        }catch (Exception e) {
+            return -1;
         }
         return -1;
     }

@@ -92,6 +92,8 @@ public class ControladorListarEmpleados extends Controlador{
             javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Ingrese un parametro al buscar");
             return;
         }
-        funcionesTabla.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
+        int respuesta = -1;
+        respuesta =  funcionesTabla.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
+        if(respuesta == -1) javax.swing.JOptionPane.showMessageDialog((Component) ventana,"BUSQUEDA NO ENCONTRADA");
     }
 }

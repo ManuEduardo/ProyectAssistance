@@ -15,13 +15,17 @@ public class LinealSearch implements Buscar{
     }
 
     private int buscarInt(Atributo[] lista,String tipoObjetivo,String objetivo){
-        int intObjetivo = Integer.parseInt(objetivo);
         int posicion = -1;
-        for(int i = 0; i < lista.length; i++){
-            if((Integer) lista[i].ObtenerAtributo(tipoObjetivo) == intObjetivo){
-                posicion = i;
-                break;
+        try {
+            int intObjetivo = Integer.parseInt(objetivo);
+            for(int i = 0; i < lista.length; i++){
+                if((Integer) lista[i].ObtenerAtributo(tipoObjetivo) == intObjetivo){
+                    posicion = i;
+                    break;
+                }
             }
+        }catch (Exception e){
+            return -1;
         }
         return posicion;
     }

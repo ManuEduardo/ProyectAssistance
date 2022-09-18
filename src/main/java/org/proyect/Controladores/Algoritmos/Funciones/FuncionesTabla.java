@@ -40,15 +40,18 @@ public class FuncionesTabla {
     }
 
 
-    public void buscarTabla(JTable tabla, Atributo[] lista, String[] caracteristicas, String tipoParametroBuscar,
+    public int buscarTabla(JTable tabla, Atributo[] lista, String[] caracteristicas, String tipoParametroBuscar,
                             String algoritmoBusqueda, String parametroBuscar ) throws Exception {
 
         modeloTable = (DefaultTableModel) tabla.getModel();
         FactorySearch algoritmo = new FactorySearch();
         int indice = algoritmo.buscarLista(algoritmoBusqueda,lista,tipoParametroBuscar, parametroBuscar);
-        if(indice == -1) throw new Exception("NO SE ENCONTRO LA BUSQUEDA PEDIDA");
+        if(indice == -1){
+            return indice;
+        }
         Atributo[] respuesta = new Atributo[1];
         respuesta[0] = lista[indice];
         actualizarTabla(tabla,respuesta,caracteristicas);
+        return indice;
     }
 }
