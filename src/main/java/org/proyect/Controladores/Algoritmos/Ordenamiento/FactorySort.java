@@ -9,10 +9,10 @@ public class FactorySort {
                 return new BubbleSort();
             }
             case "Selectionsort" -> {
-                return new BubbleSort();
+                return new SelectionSort();
             }
             case "Insertionsort" -> {
-                return new BubbleSort();
+                return new InsertionSort();
             }
             case "Quicksort" -> {
                 return new BubbleSort();

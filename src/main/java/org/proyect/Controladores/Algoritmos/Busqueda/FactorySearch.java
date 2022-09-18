@@ -8,11 +8,11 @@ public class FactorySearch {
         switch (algoritmo) {
             case "LinealSearch" -> {
                 System.out.println("LS");
-                return new BinarySearch();
+                return new LinealSearch();
             }
             case "BinarySearch" -> {
                 System.out.println("BS");
-                return new LinealSearch();
+                return new BinarySearch();
             }
             default -> {
                 System.out.println("Error");

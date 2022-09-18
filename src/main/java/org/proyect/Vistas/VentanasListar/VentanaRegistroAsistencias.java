@@ -110,7 +110,7 @@ public class VentanaRegistroAsistencias extends javax.swing.JFrame implements Ve
         panel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
         jCBBuscar.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jCBBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id", "Fecha" }));
+        jCBBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id", "Fecha", "Empleado" }));
         panel1.add(jCBBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 170, 29));
 
         jCBMetodo.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
@@ -190,7 +190,7 @@ public class VentanaRegistroAsistencias extends javax.swing.JFrame implements Ve
         PanelFondo.add(jCBAlgoritmo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 170, 29));
 
         jCBCriterio.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jCBCriterio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Fecha" }));
+        jCBCriterio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Fecha", "Empleado" }));
         PanelFondo.add(jCBCriterio, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 170, 29));
 
         jButtonOrdenar.setBackground(new java.awt.Color(57, 62, 89));

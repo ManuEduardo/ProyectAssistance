@@ -89,6 +89,7 @@ public class ControladorListarAsistencias extends Controlador {
 
     private void bucarAsistencias() throws Exception {
         String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
+        if(tipoParametroBuscar.equals("fecha")) tipoParametroBuscar = "fechaformateada";
         String algoritmoBusqueda = ((String) jCBMetodo.getSelectedItem()).trim();
         String parametroBuscar = (jTFIngresar.getText()).trim();
         if(parametroBuscar.equals("")){
