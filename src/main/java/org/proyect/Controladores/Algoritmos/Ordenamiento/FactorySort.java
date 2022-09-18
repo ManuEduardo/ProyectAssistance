@@ -15,7 +15,7 @@ public class FactorySort {
                 return new InsertionSort();
             }
             case "Quicksort" -> {
-                return new BubbleSort();
+                return new QuickSort();
             }
             case "Shellsort" -> {
                 return new ShellSort();
