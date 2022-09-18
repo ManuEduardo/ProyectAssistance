@@ -21,7 +21,7 @@ public class FactorySort {
                 return new ShellSort();
             }
             case "Mergesort" -> {
-                return new BubbleSort();
+                return new MergeSort();
             }
             default -> {
                 System.out.println("Error");
