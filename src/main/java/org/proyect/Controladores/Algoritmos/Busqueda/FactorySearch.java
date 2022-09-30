@@ -1,7 +1,8 @@
 package org.proyect.Controladores.Algoritmos.Busqueda;
 
-import org.proyect.Controladores.Algoritmos.Ordenamiento.Ordenar;
 import org.proyect.Modelos.Atributo;
+
+import java.util.ArrayList;
 
 public class FactorySearch {
     private Buscar devolverAlgoritmoBusqueda(String algoritmo){
@@ -20,7 +21,7 @@ public class FactorySearch {
             }
         }
     }
-    public int buscarLista(String metodo, Atributo[] lista, String tipoObjetivo, String objetivo) throws Exception {
+    public int buscarLista(String metodo, ArrayList<Atributo> lista, String tipoObjetivo, String objetivo) throws Exception {
         Buscar algoritmo = devolverAlgoritmoBusqueda(metodo);
         return algoritmo.busqueda(lista,tipoObjetivo, objetivo);
     }

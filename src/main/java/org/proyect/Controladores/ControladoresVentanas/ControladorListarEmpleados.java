@@ -8,11 +8,14 @@ import org.proyect.Controladores.Controlador;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class ControladorListarEmpleados extends Controlador{
     GenerarEmpleadosAsistencias generador = new GenerarEmpleadosAsistencias();
-    Atributo[] listaInicial = generador.generarEmpleados();
+    //generador de arraylist para prueba
+    ArrayList<Atributo> listaInicial = new ArrayList<>(Arrays.asList(generador.generarEmpleados()));
 
     FuncionesTabla funcionesTabla = new FuncionesTabla();
     //Componentes de la ventana
@@ -24,7 +27,7 @@ public class ControladorListarEmpleados extends Controlador{
     JComboBox<String> jCBMetodo;
     JTextField jTFIngresar;
     JTable jTableBusqueda;
-    String[] caracteristicas = {"id","nombre","email","departamento"};
+    ArrayList<String> caracteristicas = new ArrayList<>();//{"id","nombre","email","departamento"};
 
     public ControladorListarEmpleados(VentanaRegistroEmpleados ventana) {
         super(ventana);
@@ -36,6 +39,10 @@ public class ControladorListarEmpleados extends Controlador{
         jCBCriterio = ventana.jCBCriterio;
         jCBMetodo = ventana.jCBMetodo;
         jTFIngresar = ventana.jTFIngresar;
+        caracteristicas.add("id");
+        caracteristicas.add("nombre");
+        caracteristicas.add("email");
+        caracteristicas.add("departamento");
 
         ventana.jButtonListar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override

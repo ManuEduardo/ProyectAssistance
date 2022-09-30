@@ -6,21 +6,23 @@ import org.proyect.Modelos.Atributo;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
 
 public class FuncionesTabla {
     private DefaultTableModel modeloTable = new DefaultTableModel();
     //INSTANCIARCLASES
 
 
-    public void actualizarTabla(JTable tabla, Atributo[] lista, String[] caracteristicas) {
+    public void actualizarTabla(JTable tabla, ArrayList<Atributo> lista, ArrayList<String> caracteristicas) {
         modeloTable = (DefaultTableModel) tabla.getModel();
         vaciarTabla(tabla);
-        Object[] ob = new Object[caracteristicas.length];
+        ArrayList<Object> ob = new ArrayList<>();
         for (Atributo atributo : lista) {
-            for (int j = 0; j < caracteristicas.length; j++) {
-                ob[j] = atributo.ObtenerAtributo(caracteristicas[j]);
+            for (int j = 0; j < caracteristicas.size(); j++) {
+                ob.add(atributo.ObtenerAtributo(caracteristicas.get(j)));
             }
-            modeloTable.addRow(ob);
+            modeloTable.addRow(ob.toArray());
+            ob.clear();
         }
         tabla.setModel(modeloTable);
     }
@@ -31,16 +33,22 @@ public class FuncionesTabla {
     }
 
 
-    public void ordenarTabla(JTable tabla,Atributo[] lista, String metodo, String parametro,
-                             String[] caracteristicas) throws Exception {
+    public void ordenarTabla(JTable tabla, ArrayList<Atributo> lista, String metodo, String parametro,
+                             ArrayList<String> caracteristicas) throws Exception {
 
         FactorySort algoritmos = new FactorySort();
-        lista = (Atributo[]) algoritmos.ordenarLista(metodo,lista,parametro);
+        //lista = algoritmos.ordenarLista(metodo,lista,parametro);
+        ArrayList<Object> listaObjeto = algoritmos.ordenarLista(metodo,lista,parametro);
+        lista = new ArrayList<>((listaObjeto).size());
+        for (Object object : listaObjeto) {
+            lista.add((Atributo) object);
+        }
+
         actualizarTabla(tabla,lista,caracteristicas);
     }
 
 
-    public int buscarTabla(JTable tabla, Atributo[] lista, String[] caracteristicas, String tipoParametroBuscar,
+    public int buscarTabla(JTable tabla, ArrayList<Atributo> lista, ArrayList<String> caracteristicas, String tipoParametroBuscar,
                             String algoritmoBusqueda, String parametroBuscar ) throws Exception {
 
         modeloTable = (DefaultTableModel) tabla.getModel();
@@ -49,8 +57,8 @@ public class FuncionesTabla {
         if(indice == -1){
             return indice;
         }
-        Atributo[] respuesta = new Atributo[1];
-        respuesta[0] = lista[indice];
+        ArrayList<Atributo> respuesta = new ArrayList<>(1);
+        respuesta.add( lista.get(indice));
         actualizarTabla(tabla,respuesta,caracteristicas);
         return indice;
     }

@@ -2,6 +2,8 @@ package org.proyect.Controladores.Algoritmos.Ordenamiento;
 
 import org.proyect.Modelos.Atributo;
 
+import java.util.ArrayList;
+
 public class FactorySort {
     private Ordenar devolverAlgoritmoOrdenamiento(String algoritmo){
         switch (algoritmo) {
@@ -29,7 +31,7 @@ public class FactorySort {
             }
         }
     }
-    public Object[] ordenarLista(String metodo, Atributo[] lista, String parametro) throws Exception {
+    public ArrayList<Object> ordenarLista(String metodo, ArrayList<Atributo> lista, String parametro) throws Exception {
         Ordenar algoritmo = devolverAlgoritmoOrdenamiento(metodo);
         return algoritmo.ordenamiento(lista, parametro);
     }

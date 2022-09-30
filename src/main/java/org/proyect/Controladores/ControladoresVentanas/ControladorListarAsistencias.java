@@ -8,10 +8,13 @@ import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ControladorListarAsistencias extends Controlador {
     GenerarEmpleadosAsistencias generador = new GenerarEmpleadosAsistencias();
-    Atributo[] listaInicial = generador.generarAsistencias();
+    //generador de arraylist para prueba
+    ArrayList<Atributo> listaInicial = new ArrayList<Atributo>(Arrays.asList(generador.generarAsistencias()));
 
     FuncionesTabla funcionesTabla = new FuncionesTabla();
     //Componentes de la ventana
@@ -23,7 +26,7 @@ public class ControladorListarAsistencias extends Controlador {
     JComboBox<String> jCBMetodo;
     JTextField jTFIngresar;
     JTable jTableBusqueda;
-    String[] caracteristicas = {"id","empleado","fechaformateada","horaformateada"};
+    ArrayList<String> caracteristicas = new ArrayList<>();//{"id","empleado","fechaformateada","horaformateada"};
 
     public ControladorListarAsistencias(VentanaRegistroAsistencias ventana) {
         super(ventana);
@@ -35,6 +38,10 @@ public class ControladorListarAsistencias extends Controlador {
         jCBCriterio = ventana.jCBCriterio;
         jCBMetodo = ventana.jCBMetodo;
         jTFIngresar = ventana.jTFIngresar;
+        caracteristicas.add("id");
+        caracteristicas.add("empleado");
+        caracteristicas.add("fechaformateada");
+        caracteristicas.add("horaformateada");
 
         ventana.jButtonListar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override

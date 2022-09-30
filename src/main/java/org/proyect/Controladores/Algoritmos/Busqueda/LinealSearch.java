@@ -2,11 +2,13 @@ package org.proyect.Controladores.Algoritmos.Busqueda;
 
 import org.proyect.Modelos.Atributo;
 
+import java.util.ArrayList;
+
 public class LinealSearch implements Buscar{
     //en dado caso no se encuentre devolver -1
     @Override
-    public int busqueda(Atributo[] lista, String tipoObjetivo, String objetivo) throws Exception {
-        Object tipo = lista[0].ObtenerAtributo(tipoObjetivo);
+    public int busqueda(ArrayList<Atributo> lista, String tipoObjetivo, String objetivo) throws Exception {
+        Object tipo = lista.get(0).ObtenerAtributo(tipoObjetivo);
         return switch (((Object) tipo).getClass().getSimpleName()) {
             case "String" -> buscarString(lista,tipoObjetivo, objetivo);
             case "Integer" -> buscarInt(lista,tipoObjetivo, objetivo);
@@ -14,12 +16,12 @@ public class LinealSearch implements Buscar{
         };
     }
 
-    private int buscarInt(Atributo[] lista,String tipoObjetivo,String objetivo){
+    private int buscarInt(ArrayList<Atributo> lista,String tipoObjetivo,String objetivo){
         int posicion = -1;
         try {
             int intObjetivo = Integer.parseInt(objetivo);
-            for(int i = 0; i < lista.length; i++){
-                if((Integer) lista[i].ObtenerAtributo(tipoObjetivo) == intObjetivo){
+            for(int i = 0; i < lista.size(); i++){
+                if((Integer) lista.get(i).ObtenerAtributo(tipoObjetivo) == intObjetivo){
                     posicion = i;
                     break;
                 }
@@ -29,10 +31,10 @@ public class LinealSearch implements Buscar{
         }
         return posicion;
     }
-    private int buscarString(Atributo[] lista,String tipoObjetivo, String objetivo){
+    private int buscarString(ArrayList<Atributo> lista,String tipoObjetivo, String objetivo){
         int posicion = -1;
-        for(int i = 0; i < lista.length; i++){
-            if(lista[i].ObtenerAtributo(tipoObjetivo).equals(objetivo)){
+        for(int i = 0; i < lista.size(); i++){
+            if(lista.get(i).ObtenerAtributo(tipoObjetivo).equals(objetivo)){
                 posicion = i;
                 break;
             }
