@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bee07f-de6d-4066-b1f3-bcacbac1cf4b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Registros/ControladorRegistrarAsistencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Registros/ControladorRegistrarUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/Buscar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/Buscar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/FactorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/FactorySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/LinealSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/LinealSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Funciones/FuncionesTabla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Funciones/FuncionesTabla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/BubbleSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/FactorySort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/FactorySort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/Ordenar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/Ordenar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/SelectionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/ShellSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/ShellSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarAsistencias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/GenerarEmpleadosAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/GenerarEmpleadosAsistencias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Asistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Asistencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Usuario/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Usuario/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Usuario/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +101,10 @@
       <workItem from="1664311442565" duration="2280000" />
       <workItem from="1664417040907" duration="1524000" />
       <workItem from="1664489195808" duration="15674000" />
+      <workItem from="1664921751489" duration="106000" />
+      <workItem from="1664938515877" duration="2203000" />
+      <workItem from="1665025833512" duration="3584000" />
+      <workItem from="1665422145106" duration="2768000" />
     </task>
     <servers />
   </component>

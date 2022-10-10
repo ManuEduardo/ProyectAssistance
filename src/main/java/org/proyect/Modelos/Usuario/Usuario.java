@@ -3,9 +3,9 @@ package org.proyect.Modelos.Usuario;
 import org.proyect.Modelos.Atributo;
 
 public class Usuario implements Atributo {
-    private int id;
-    private String nombre;
-    private String email;
+    protected int id;
+    protected String nombre;
+    protected String email;
     protected String contrasena;
     protected String departamento;
     
@@ -40,7 +40,7 @@ public class Usuario implements Atributo {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
+
     @Override
     public Object ObtenerAtributo(String atributo) {
         if (atributo.equals("id")) return getId();

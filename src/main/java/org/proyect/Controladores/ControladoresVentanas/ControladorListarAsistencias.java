@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ControladorListarAsistencias extends Controlador {
-    GenerarEmpleadosAsistencias generador = new GenerarEmpleadosAsistencias();
+    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
     //generador de arraylist para prueba
     ArrayList<Atributo> listaInicial = new ArrayList<Atributo>(Arrays.asList(generador.generarAsistencias()));
 

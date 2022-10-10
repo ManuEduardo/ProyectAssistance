@@ -9,6 +9,18 @@ public class Empleado extends Usuario{
         this.departamento = departamento;
     }
 
+    public Empleado() {
+    }
+
+    public Empleado(int id, String nombre, String email, String contrasena, String departamento){
+        super();
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.contrasena = contrasena;
+        this.departamento = departamento;
+    }
+
     @Override
     public Object ObtenerAtributo(String atributo) {
 

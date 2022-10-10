@@ -6,7 +6,6 @@ public class Asistencia implements Atributo{
     private int id;
     private String empleado;
     private Date fecha;
-    private String hora;
     private String pattern = "dd-MM-yyyy";
     private String patternHour = "HH:mm";
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -36,12 +35,14 @@ public class Asistencia implements Atributo{
         this.fecha = fecha;
     }
 
-    public String getHora() {
-        return hora;
+    public Asistencia(){
+
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public Asistencia(int id, String empleado, Date fecha) {
+        this.id = id;
+        this.empleado = empleado;
+        this.fecha = fecha;
     }
 
     @Override
