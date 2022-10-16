@@ -8,7 +8,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
-public class FuncionesTabla {
+public class FuncionesTablaArrayList {
     private DefaultTableModel modeloTable = new DefaultTableModel();
     //INSTANCIARCLASES
 
@@ -33,8 +33,8 @@ public class FuncionesTabla {
     }
 
 
-    public void ordenarTabla(JTable tabla, ArrayList<Atributo> lista, String metodo, String parametro,
-                             ArrayList<String> caracteristicas) throws Exception {
+    public void ordenarTabla(JTable tabla, ArrayList<Atributo> lista, String metodo,
+                             String parametro, ArrayList<String> caracteristicas) throws Exception {
 
         FactorySort algoritmos = new FactorySort();
         //lista = algoritmos.ordenarLista(metodo,lista,parametro);
@@ -48,8 +48,9 @@ public class FuncionesTabla {
     }
 
 
-    public int buscarTabla(JTable tabla, ArrayList<Atributo> lista, ArrayList<String> caracteristicas, String tipoParametroBuscar,
-                            String algoritmoBusqueda, String parametroBuscar ) throws Exception {
+    public int buscarTabla(JTable tabla, ArrayList<Atributo> lista,
+                           ArrayList<String> caracteristicas, String tipoParametroBuscar,
+                           String algoritmoBusqueda, String parametroBuscar ) throws Exception {
 
         modeloTable = (DefaultTableModel) tabla.getModel();
         FactorySearch algoritmo = new FactorySearch();

@@ -1,6 +1,6 @@
 package org.proyect.Controladores.ControladoresVentanas;
 
-import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTabla;
+import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
 import org.proyect.GenerarEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroEmpleados;
@@ -9,15 +9,14 @@ import org.proyect.Controladores.Controlador;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class ControladorListarEmpleados extends Controlador{
     GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
     //generador de arraylist para prueba
-    ArrayList<Atributo> listaInicial = new ArrayList<>(Arrays.asList(generador.generarEmpleados()));
+    ArrayList<Atributo> listaInicial = generador.generarEmpleados();
 
-    FuncionesTabla funcionesTabla = new FuncionesTabla();
+    FuncionesTablaArrayList funcionesTablaArrayList = new FuncionesTablaArrayList();
     //Componentes de la ventana
     JTable jTablePrincipal;
     JTable jTableOrdenada;
@@ -78,17 +77,17 @@ public class ControladorListarEmpleados extends Controlador{
     }
 
     private void listarEmpleados(){
-        funcionesTabla.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
+        funcionesTablaArrayList.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
     private void ordenamientoTabla() throws Exception {
         String algoritmo = ((String) jCBAlgoritmo.getSelectedItem()).trim();
         String criterio = ((String) jCBCriterio.getSelectedItem()).toLowerCase();
         System.out.println("+++"+algoritmo+"+++");
         if (criterio.equals("dni")){
-            funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
+            funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
             return;
         }
-        funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
+        funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
     }
     private void bucarEmpleados() throws Exception {
         String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
@@ -100,7 +99,7 @@ public class ControladorListarEmpleados extends Controlador{
             return;
         }
         int respuesta = -1;
-        respuesta =  funcionesTabla.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
+        respuesta =  funcionesTablaArrayList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
         if(respuesta == -1) javax.swing.JOptionPane.showMessageDialog((Component) ventana,"BUSQUEDA NO ENCONTRADA");
     }
 }

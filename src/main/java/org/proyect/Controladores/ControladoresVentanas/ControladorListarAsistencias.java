@@ -1,6 +1,6 @@
 package org.proyect.Controladores.ControladoresVentanas;
 
-import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTabla;
+import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
 import org.proyect.Controladores.Controlador;
 import org.proyect.GenerarEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
@@ -9,14 +9,13 @@ import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ControladorListarAsistencias extends Controlador {
     GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
     //generador de arraylist para prueba
-    ArrayList<Atributo> listaInicial = new ArrayList<Atributo>(Arrays.asList(generador.generarAsistencias()));
+    ArrayList<Atributo> listaInicial = generador.generarAsistencias();
 
-    FuncionesTabla funcionesTabla = new FuncionesTabla();
+    FuncionesTablaArrayList funcionesTablaArrayList = new FuncionesTablaArrayList();
     //Componentes de la ventana
     JTable jTablePrincipal;
     JTable jTableOrdenada;
@@ -77,7 +76,8 @@ public class ControladorListarAsistencias extends Controlador {
     }
 
     private void listarAsistencias(){
-        funcionesTabla.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
+        this.listaInicial = generador.generarAsistencias();
+        funcionesTablaArrayList.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
 
     private void ordenamientoTabla() throws Exception {
@@ -87,10 +87,10 @@ public class ControladorListarAsistencias extends Controlador {
         algoritmo = algoritmo.trim();
         System.out.println("+++"+algoritmo+"+++");
         if (criterio.equals("dni")){
-            funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
+            funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
             return;
         }
-        funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
+        funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
     }
 
 
@@ -104,7 +104,7 @@ public class ControladorListarAsistencias extends Controlador {
             return;
         }
         int respuesta = -1;
-        respuesta = funcionesTabla.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
+        respuesta = funcionesTablaArrayList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
         if(respuesta == -1) javax.swing.JOptionPane.showMessageDialog((Component) ventana,"BUSQUEDA NO ENCONTRADA");
     }
 }
