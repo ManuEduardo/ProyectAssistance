@@ -1,7 +1,7 @@
 package org.proyect;
 
-import org.proyect.Controladores.ControladoresVentanas.ControladorListarAsistencias;
-import org.proyect.Controladores.ControladoresVentanas.ControladorListarEmpleados;
+import org.proyect.Controladores.ControladoresVentanas.Crear.ControladorListarAsistencias;
+import org.proyect.Controladores.ControladoresVentanas.Crear.ControladorListarEmpleados;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroEmpleados;
 
@@ -24,9 +24,9 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        controlador1.iniciarVentana();
-        controlador2.iniciarVentana();
-        //controlador3.iniciarVentana();
-        controlador4.iniciarVentana();
+        controlador1.iniciarVentana();// Listar Empleados
+        controlador2.iniciarVentana();// Listar Asistencias
+        controlador3.iniciarVentana();// Crear Empleado
+        controlador4.iniciarVentana();// Crear Asistencia
     }
 }

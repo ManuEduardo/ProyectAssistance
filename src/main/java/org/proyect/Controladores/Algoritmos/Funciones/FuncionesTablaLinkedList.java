@@ -13,7 +13,6 @@ public class FuncionesTablaLinkedList {
     private DefaultTableModel modeloTable = new DefaultTableModel();
     //INSTANCIARCLASES
 
-
     public void actualizarTabla(JTable tabla, LinkedList<Atributo> lista, ArrayList<String> caracteristicas) {
         modeloTable = (DefaultTableModel) tabla.getModel();
         vaciarTabla(tabla);
@@ -27,12 +26,12 @@ public class FuncionesTablaLinkedList {
         }
         tabla.setModel(modeloTable);
     }
+
     public void vaciarTabla(JTable tabla) {
         modeloTable = (DefaultTableModel) tabla.getModel();
         modeloTable.setRowCount(0);
         tabla.setModel(modeloTable);
     }
-
 
     public int buscarTabla(JTable tabla, LinkedList<Atributo> lista,
                            ArrayList<String> caracteristicas,
@@ -44,6 +43,8 @@ public class FuncionesTablaLinkedList {
         if(indice == -1){
             return indice;
         }
+
+
         LinkedList<Atributo> respuesta = new LinkedList<>();
         respuesta.add( lista.get(indice));
         actualizarTabla(tabla,respuesta,caracteristicas);

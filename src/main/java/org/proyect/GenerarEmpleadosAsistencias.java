@@ -23,24 +23,24 @@ public class GenerarEmpleadosAsistencias {
     private GenerarEmpleadosAsistencias() {
         //lista empleados
         listaEmpleadosArrayList.add(new Empleado(22694792, "Ingrid", "marta-c2002@gmail.com", "Ta1PIt12", "Marketing"));
-        listaEmpleadosArrayList.add(new Empleado(23263756 , "Maritza ", "mailane43@gmail.com", "MIgLkWA1", "logistica"));
-        listaEmpleadosArrayList.add(new Empleado(24743385, "Osvaldo", "iki_rojo@gmail.com", " H0RHoude", "ventas"));
+        listaEmpleadosArrayList.add(new Empleado(23263756 , "Maritza ", "mailane43@gmail.com", "MIgLkWA1", "Logistica"));
+        listaEmpleadosArrayList.add(new Empleado(24743385, "Osvaldo", "iki_rojo@gmail.com", " H0RHoude", "Ventas"));
         listaEmpleadosArrayList.add(new Empleado(25546888, "Camila", "Katty_magda20@gmail.com", "cHAR4gen", "Control Interno"));
-        listaEmpleadosArrayList.add(new Empleado(26737523, "Ignacio", "Ibarra_32@gmail.com", "IDAZiRArS", "marketing"));
+        listaEmpleadosArrayList.add(new Empleado(26737523, "Ignacio", "Ibarra_32@gmail.com", "IDAZiRArS", "Marketing"));
         listaEmpleadosArrayList.add(new Empleado(27599253, "Daniela", "daniela_aguilera@gmail.com", "RIStaBRiM", "Tic"));
         listaEmpleadosArrayList.add(new Empleado(28456322, "Andrea", "marissa-leo01@gmail.com", "andOsabiA", "Tic"));
-        listaEmpleadosArrayList.add(new Empleado(32952649, "Paula", "Paula2002_farya@gmail.com", "isMASeria", "ventas"));
+        listaEmpleadosArrayList.add(new Empleado(32952649, "Paula", "Paula2002_farya@gmail.com", "isMASeria", "Ventas"));
         listaEmpleadosArrayList.add(new Empleado(33343982, "Marily", "Mari10_edo@gmail.com", "APheATENg", "logistica"));
-        listaEmpleadosArrayList.add(new Empleado(35545499, "Elizabeth", "elizabet39@gmail.com", "lFREsdape", "logistica"));
+        listaEmpleadosArrayList.add(new Empleado(35545499, "Elizabeth", "elizabet39@gmail.com", "lFREsdape", "Logistica"));
         listaEmpleadosArrayList.add(new Empleado(45799443, "Johanna", "joy_pao_@gmail.com", "MoPo41TAT", "Contabilidad"));
-        listaEmpleadosArrayList.add(new Empleado(48482882, "Claudia", "claudia_bergez@gmail.com", "GheRmouTe", "ventas"));
-        listaEmpleadosArrayList.add(new Empleado(58799654, "Sergio", "sergio_herrera2005@gmail.com", "EURsibUsi", "ventas"));
-        listaEmpleadosArrayList.add(new Empleado(62965893, "Marcelo", "juan-Marc_21@gmail.com", " liC5ENVI", "Contabilidad"));
+        listaEmpleadosArrayList.add(new Empleado(48482882, "Claudia", "claudia_bergez@gmail.com", "GheRmouTe", "Ventas"));
+        listaEmpleadosArrayList.add(new Empleado(58799654, "Sergio", "sergio_herrera2005@gmail.com", "EURsibUsi", "Ventas"));
+        listaEmpleadosArrayList.add(new Empleado(62965893, "Marcelo", "juan-Marc_21@gmail.com", "liC5ENVI", "Contabilidad"));
         listaEmpleadosArrayList.add(new Empleado(63465537, "Gianfranco", "ruli-andr0@gmail.com", "I08RGEnGU", "RR.HH"));
-        listaEmpleadosArrayList.add(new Empleado(63587744, "Pablo", "pablo_0l44@gmail.com", "IreMORA", "ventas"));
+        listaEmpleadosArrayList.add(new Empleado(63587744, "Pablo", "pablo_0l44@gmail.com", "IreMORA", "Ventas"));
         listaEmpleadosArrayList.add(new Empleado(64238493, "German", "campos_0fray@gmail.com", "SOnoWNEoP", "RR.HH"));
-        listaEmpleadosArrayList.add(new Empleado(66474624, "Raul", "joaco-cordova@gmail.com", "tOrPERiCh", "ventas"));
-        listaEmpleadosArrayList.add(new Empleado(69728459, "Ivan", "1calderon_SR@gmail.com", "RUgaRaxOT", "marketing"));
+        listaEmpleadosArrayList.add(new Empleado(66474624, "Raul", "joaco-cordova@gmail.com", "tOrPERiCh", "Ventas"));
+        listaEmpleadosArrayList.add(new Empleado(69728459, "Ivan", "1calderon_SR@gmail.com", "RUgaRaxOT", "Marketing"));
         listaEmpleadosArrayList.add(new Empleado(70426229, "Felipe", "dante_ol42@gmail.com", "shAmishOU", "Control Interno"));
 
         //lista asistencias

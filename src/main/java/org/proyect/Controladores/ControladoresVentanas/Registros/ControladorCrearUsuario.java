@@ -2,9 +2,11 @@ package org.proyect.Controladores.ControladoresVentanas.Registros;
 
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaLinkedList;
+import org.proyect.Controladores.BaseDatos.Dao.UsuarioDao;
 import org.proyect.Controladores.Controlador;
 import org.proyect.GenerarEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
+import org.proyect.Modelos.Usuario.Empleado;
 import org.proyect.Vistas.VentanasRegistrar.VentanaCrearEmpleado;
 
 import javax.swing.*;
@@ -17,6 +19,7 @@ public class ControladorCrearUsuario extends Controlador {
     GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
     LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarEmpleados());
     FuncionesTablaLinkedList funcionesTablaLinkedList = new FuncionesTablaLinkedList();
+    UsuarioDao UsDao = new UsuarioDao();
     JButton jButtonBuscar;
     JButton jButtonRegistrar;
     JComboBox<String> jComboBoxParametro;
@@ -24,10 +27,10 @@ public class ControladorCrearUsuario extends Controlador {
     JPasswordField jPasswordField2;
     JTable jTableBusqueda;
     JTextField jTextFieldBuscarNombre;
-    JTextField jTextFieldDepartamento;
     JTextField jTextFieldDni;
     JTextField jTextFieldEmail;
     JTextField jTextFieldNombre;
+    JComboBox<String> jComboBoxDepartamento;
     ArrayList<String> caracteristicas = new ArrayList<>();
 
     public ControladorCrearUsuario(VentanaCrearEmpleado ventana) {
@@ -39,7 +42,7 @@ public class ControladorCrearUsuario extends Controlador {
         this.jPasswordField2 = ventana.jPasswordField2;
         this.jTableBusqueda = ventana.jTableBusqueda;
         this.jTextFieldBuscarNombre = ventana.jTextFieldBuscar;
-        this.jTextFieldDepartamento = ventana.jTextFieldDepartamento;
+        this.jComboBoxDepartamento = ventana.jComboBoxDepartamento;
         this.jTextFieldDni = ventana.jTextFieldDni;
         this.jTextFieldEmail = ventana.jTextFieldEmail;
         this.jTextFieldNombre = ventana.jTextFieldNombre;
@@ -56,6 +59,7 @@ public class ControladorCrearUsuario extends Controlador {
         ventana.jButtonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaInicial = new LinkedList<>(generador.generarEmpleados());
                 try {
                     buscar();
                 } catch (Exception e) {
@@ -80,7 +84,29 @@ public class ControladorCrearUsuario extends Controlador {
     }
 
     private void registrar(){
+        String contrasena1 = (String.valueOf(this.jPasswordField1.getPassword())).trim();
+        String contrasena2 = String.valueOf(this.jPasswordField2.getPassword()).trim();
+        String dni = (this.jTextFieldDni.getText().trim());
+        String nombre = this.jTextFieldNombre.getText().trim();
+        String  email = this.jTextFieldEmail.getText().trim();
+        String departamento = ((String) this.jComboBoxDepartamento.getSelectedItem()).trim();
 
+        if (contrasena1.equals("")||dni.equals("")||nombre.equals("")||email.equals("")||
+                departamento.equals("")||contrasena2.equals("")){
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Rellene el formulario");
+            return;
+        }
+
+        if(!contrasena1.equals(contrasena2)){
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Las contraseñas son diferentes");
+            return;
+        }
+        //comprobadores
+
+        //fin de comprobadores
+        Empleado nuevoEmpleado = new Empleado(Integer.parseInt(dni), nombre, email, contrasena1, departamento);
+        UsDao.create(nuevoEmpleado);
+        javax.swing.JOptionPane.showMessageDialog((Component) ventana,"El usuario se a creado");
     }
 
     @Override

@@ -48,7 +48,6 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
         jLabel7 = new javax.swing.JLabel();
         jTextFieldDni = new javax.swing.JTextField();
         jTextFieldNombre = new javax.swing.JTextField();
-        jTextFieldDepartamento = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
@@ -62,6 +61,7 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
         jComboBoxParametro = new javax.swing.JComboBox<>();
         jTextFieldEmail = new javax.swing.JTextField();
         jButtonRegistrar = new javax.swing.JButton();
+        jComboBoxDepartamento = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -118,11 +118,6 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
         jTextFieldNombre.setForeground(new java.awt.Color(102, 102, 102));
         jTextFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 170, 29));
-
-        jTextFieldDepartamento.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jTextFieldDepartamento.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldDepartamento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 170, 29));
 
         jPasswordField1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(102, 102, 102));
@@ -201,6 +196,9 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
         jButtonRegistrar.setText("Registrar");
         jPanel1.add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 160, 40));
 
+        jComboBoxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marketing", "Ventas", "Logistica", "Tic", "Control Interno", "RR.HH", "Contabilidad" }));
+        jPanel1.add(jComboBoxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 170, 29));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -268,6 +266,7 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonBuscar;
     public javax.swing.JButton jButtonRegistrar;
+    public javax.swing.JComboBox<String> jComboBoxDepartamento;
     public javax.swing.JComboBox<String> jComboBoxParametro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -286,7 +285,6 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableBusqueda;
     public javax.swing.JTextField jTextFieldBuscar;
-    public javax.swing.JTextField jTextFieldDepartamento;
     public javax.swing.JTextField jTextFieldDni;
     public javax.swing.JTextField jTextFieldEmail;
     public javax.swing.JTextField jTextFieldNombre;

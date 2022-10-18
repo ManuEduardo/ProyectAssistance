@@ -13,15 +13,13 @@ import org.proyect.Vistas.VentanasRegistrar.VentanaCrearAsistencia;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 
 public class ControladorCrearAsistencia extends Controlador {
 
-    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
-    LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarAsistencias());
-    LinkedList<Atributo> listaInicialEmpleados = new LinkedList<>(generador.generarEmpleados());
+    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador(); // Patron Singelton
+    LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarAsistencias()); // Generas las Listas
     FuncionesTablaLinkedList funcionesTablaLinkedList = new FuncionesTablaLinkedList();
     AsistenciaDao AsDao = new AsistenciaDao();
     JButton JButtonBuscar;
@@ -74,40 +72,48 @@ public class ControladorCrearAsistencia extends Controlador {
         String tipoParametroBuscar = (((String) jComboBoxParametro.getSelectedItem()).trim()).toLowerCase();
         if(tipoParametroBuscar.equals("fecha")) tipoParametroBuscar = "fechaformateada";
         String parametroBuscar = (jTextFieldBuscar.getText()).trim();
-        funcionesTablaLinkedList.buscarTabla(jTableBusqueda, listaInicial, caracteristicas, tipoParametroBuscar, parametroBuscar);
         if(parametroBuscar.equals("")){
             javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Ingrese un parametro al buscar");
             return;
         }
+        funcionesTablaLinkedList.buscarTabla(jTableBusqueda, listaInicial, caracteristicas, tipoParametroBuscar, parametroBuscar);
         int respuesta = -1;
         respuesta = funcionesTablaLinkedList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,parametroBuscar);
         if(respuesta == -1) javax.swing.JOptionPane.showMessageDialog((Component) ventana,"BUSQUEDA NO ENCONTRADA");
     }
 
     private void registrar() throws Exception {
+        LinkedList<Atributo> listaInicialEmpleados = new LinkedList<>(generador.generarEmpleados());
         String dni = (jTextFieldDni.getText().trim());
         String contrasena = (String.valueOf((jPasswordFieldContrasenia.getPassword()))).trim();
         Date fechaActual =  new Date();
+        // Si las entradas estan vacias
         if(dni.equals("")||contrasena.equals("")){
             javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Ingrese parametros");
             return;
         }
-        BusquedaLinkedList buscar = new BusquedaLinkedList();
 
+        BusquedaLinkedList buscar = new BusquedaLinkedList();
+        //Busca el dni
         int indice = buscar.busqueda(listaInicialEmpleados,"id", dni);
         if(indice==-1){
             javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Dni no encontrado");
             return;
         }
+        //Guarda el empleado dueño de dni
         Empleado empleado = (Empleado) listaInicialEmpleados.get(indice);
-        if (contrasena.equals(empleado.getContrasena())){
-             Asistencia nuevaAsistencia = new Asistencia(listaInicial.size(), empleado.getNombre(), fechaActual);
-             AsDao.create(nuevaAsistencia);
-            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Asistencia Registrada");
-            this.listaInicial = new LinkedList<>(generador.generarAsistencias());
+        //Comparas contraseñas
+        if (!contrasena.equals(empleado.getContrasena())){
+            //si no es igual envia mensaje
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Contraseña Incorrecta");
             return;
         }
-        javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Contraseña Incorrecta");
+        //Crea la asistencia
+        Asistencia nuevaAsistencia = new Asistencia(listaInicial.size(), empleado.getNombre(), fechaActual);
+        //Agreda la asistencia usando el dao
+        AsDao.create(nuevaAsistencia);
+        javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Asistencia Registrada");
+        this.listaInicial = new LinkedList<>(generador.generarAsistencias());
     }
 
     @Override

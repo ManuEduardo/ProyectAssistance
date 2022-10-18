@@ -9,12 +9,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class AsistenciaDao implements Create, Delete {
+    // Creas el generador usando patron singleton
     GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
+    // crea lista
     LinkedList<Atributo> lista = new LinkedList<>(generador.generarAsistencias());
     @Override
     public void create(Atributo atributo) {
         lista.add(atributo);
         ArrayList<Atributo> listaNueva = new ArrayList<>(lista);
+        // Actualiza la lista
         generador.actualizarListaAsistencias(listaNueva);
+
     }
 }
