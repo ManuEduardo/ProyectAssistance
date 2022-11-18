@@ -1,4 +1,4 @@
-package org.proyect.Controladores.BaseDatos;
+package org.proyect.Controladores.BaseDatos.Dao;
 
 import org.proyect.Modelos.Atributo;
 

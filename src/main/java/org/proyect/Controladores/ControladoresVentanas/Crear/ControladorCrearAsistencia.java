@@ -1,4 +1,4 @@
-package org.proyect.Controladores.ControladoresVentanas.Registros;
+package org.proyect.Controladores.ControladoresVentanas.Crear;
 
 import org.proyect.Controladores.Algoritmos.Busqueda.BusquedaLinkedList;
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaLinkedList;
@@ -22,8 +22,6 @@ public class ControladorCrearAsistencia extends Controlador {
     LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarAsistencias()); // Generas las Listas
     FuncionesTablaLinkedList funcionesTablaLinkedList = new FuncionesTablaLinkedList();
     AsistenciaDao AsDao = new AsistenciaDao();
-    JButton JButtonBuscar;
-    JButton JButtonRegistrar;
     JComboBox<String> jComboBoxParametro;
     JPasswordField jPasswordFieldContrasenia;
     JTable jTableBusqueda;
@@ -33,8 +31,6 @@ public class ControladorCrearAsistencia extends Controlador {
 
     public ControladorCrearAsistencia(VentanaCrearAsistencia ventana) {
         super(ventana);
-        this.JButtonBuscar = ventana.jButtonBuscar;
-        this.JButtonRegistrar = ventana.jButtonRegistrar;
         this.jComboBoxParametro = ventana.jComboBoxParametro;
         this.jPasswordFieldContrasenia = ventana.jPasswordFieldContrasenia;
         this.jTableBusqueda = ventana.jTableBusqueda;

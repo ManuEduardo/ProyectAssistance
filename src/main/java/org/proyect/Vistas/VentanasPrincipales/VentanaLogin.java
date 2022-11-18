@@ -18,12 +18,12 @@ public class VentanaLogin extends javax.swing.JFrame implements Ventana {
     @Override
     public void iniciar() {
         this.setVisible(true);
-        this.setTitle("Registrar Asistencia");
+        this.setTitle("Login");
     }
 
     @Override
     public void cerrar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.setVisible(false);
     }
     public VentanaLogin() {
         initComponents();

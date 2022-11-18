@@ -1,6 +1,5 @@
-package org.proyect.Controladores.ControladoresVentanas.Registros;
+package org.proyect.Controladores.ControladoresVentanas.Crear;
 
-import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaLinkedList;
 import org.proyect.Controladores.BaseDatos.Dao.UsuarioDao;
 import org.proyect.Controladores.Controlador;
@@ -20,8 +19,6 @@ public class ControladorCrearUsuario extends Controlador {
     LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarEmpleados());
     FuncionesTablaLinkedList funcionesTablaLinkedList = new FuncionesTablaLinkedList();
     UsuarioDao UsDao = new UsuarioDao();
-    JButton jButtonBuscar;
-    JButton jButtonRegistrar;
     JComboBox<String> jComboBoxParametro;
     JPasswordField jPasswordField1;
     JPasswordField jPasswordField2;
@@ -35,8 +32,6 @@ public class ControladorCrearUsuario extends Controlador {
 
     public ControladorCrearUsuario(VentanaCrearEmpleado ventana) {
         super(ventana);
-        this.jButtonBuscar = ventana.jButtonBuscar;
-        this.jButtonRegistrar = ventana.jButtonRegistrar;
         this.jComboBoxParametro = ventana.jComboBoxParametro;
         this.jPasswordField1 = ventana.jPasswordField1;
         this.jPasswordField2 = ventana.jPasswordField2;

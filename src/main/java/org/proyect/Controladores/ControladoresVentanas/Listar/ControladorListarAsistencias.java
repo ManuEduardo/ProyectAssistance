@@ -1,20 +1,19 @@
-package org.proyect.Controladores.ControladoresVentanas.Crear;
+package org.proyect.Controladores.ControladoresVentanas.Listar;
 
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
+import org.proyect.Controladores.Controlador;
 import org.proyect.GenerarEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
-import org.proyect.Vistas.VentanasListar.VentanaRegistroEmpleados;
-import org.proyect.Controladores.Controlador;
+import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-
-public class ControladorListarEmpleados extends Controlador{
+public class ControladorListarAsistencias extends Controlador {
     GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
     //generador de arraylist para prueba
-    ArrayList<Atributo> listaInicial = generador.generarEmpleados();
+    ArrayList<Atributo> listaInicial = generador.generarAsistencias();
 
     FuncionesTablaArrayList funcionesTablaArrayList = new FuncionesTablaArrayList();
     //Componentes de la ventana
@@ -26,9 +25,9 @@ public class ControladorListarEmpleados extends Controlador{
     JComboBox<String> jCBMetodo;
     JTextField jTFIngresar;
     JTable jTableBusqueda;
-    ArrayList<String> caracteristicas = new ArrayList<>();//{"id","nombre","email","departamento"};
+    ArrayList<String> caracteristicas = new ArrayList<>();//{"id","empleado","fechaformateada","horaformateada"};
 
-    public ControladorListarEmpleados(VentanaRegistroEmpleados ventana) {
+    public ControladorListarAsistencias(VentanaRegistroAsistencias ventana) {
         super(ventana);
         jTablePrincipal = ventana.jTablePrincipal;
         jTableOrdenada = ventana.jTableOrdenada;
@@ -39,20 +38,20 @@ public class ControladorListarEmpleados extends Controlador{
         jCBMetodo = ventana.jCBMetodo;
         jTFIngresar = ventana.jTFIngresar;
         caracteristicas.add("id");
-        caracteristicas.add("nombre");
-        caracteristicas.add("email");
-        caracteristicas.add("departamento");
+        caracteristicas.add("empleado");
+        caracteristicas.add("fechaformateada");
+        caracteristicas.add("horaformateada");
 
         ventana.jButtonListar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {listarEmpleados();}
+            public void mouseClicked(java.awt.event.MouseEvent evt) {listarAsistencias();}
         });
 
         ventana.jButtonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 try {
-                    bucarEmpleados();
+                    bucarAsistencias();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -76,13 +75,17 @@ public class ControladorListarEmpleados extends Controlador{
         ventana.iniciar();
     }
 
-    private void listarEmpleados(){
-        listaInicial = generador.generarEmpleados();
+    private void listarAsistencias(){
+        this.listaInicial = generador.generarAsistencias();
         funcionesTablaArrayList.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
+
     private void ordenamientoTabla() throws Exception {
-        String algoritmo = ((String) jCBAlgoritmo.getSelectedItem()).trim();
-        String criterio = ((String) jCBCriterio.getSelectedItem()).toLowerCase();
+        listaInicial = generador.generarAsistencias();
+        String algoritmo = (String) jCBAlgoritmo.getSelectedItem();
+        String criterio = (String) jCBCriterio.getSelectedItem();
+        criterio = criterio.toLowerCase();
+        algoritmo = algoritmo.trim();
         System.out.println("+++"+algoritmo+"+++");
         if (criterio.equals("dni")){
             funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
@@ -90,10 +93,12 @@ public class ControladorListarEmpleados extends Controlador{
         }
         funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
     }
-    private void bucarEmpleados() throws Exception {
-        listaInicial = generador.generarEmpleados();
+
+
+    private void bucarAsistencias() throws Exception {
+        listaInicial = generador.generarAsistencias();
         String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
-        if(tipoParametroBuscar.equals("dni")) tipoParametroBuscar = "id";
+        if(tipoParametroBuscar.equals("fecha")) tipoParametroBuscar = "fechaformateada";
         String algoritmoBusqueda = ((String) jCBMetodo.getSelectedItem()).trim();
         String parametroBuscar = (jTFIngresar.getText()).trim();
         if(parametroBuscar.equals("")){
@@ -101,7 +106,7 @@ public class ControladorListarEmpleados extends Controlador{
             return;
         }
         int respuesta = -1;
-        respuesta =  funcionesTablaArrayList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
+        respuesta = funcionesTablaArrayList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
         if(respuesta == -1) javax.swing.JOptionPane.showMessageDialog((Component) ventana,"BUSQUEDA NO ENCONTRADA");
     }
 }

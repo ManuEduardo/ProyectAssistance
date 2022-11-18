@@ -1,12 +1,14 @@
 package org.proyect;
 
-import org.proyect.Controladores.ControladoresVentanas.Crear.ControladorListarAsistencias;
-import org.proyect.Controladores.ControladoresVentanas.Crear.ControladorListarEmpleados;
+import org.proyect.Controladores.ControladoresVentanas.ControladorLogin;
+import org.proyect.Controladores.ControladoresVentanas.Listar.ControladorListarAsistencias;
+import org.proyect.Controladores.ControladoresVentanas.Listar.ControladorListarEmpleados;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroEmpleados;
 
-import org.proyect.Controladores.ControladoresVentanas.Registros.ControladorCrearAsistencia;
-import org.proyect.Controladores.ControladoresVentanas.Registros.ControladorCrearUsuario;
+import org.proyect.Controladores.ControladoresVentanas.Crear.ControladorCrearAsistencia;
+import org.proyect.Controladores.ControladoresVentanas.Crear.ControladorCrearUsuario;
+import org.proyect.Vistas.VentanasPrincipales.VentanaLogin;
 import org.proyect.Vistas.VentanasRegistrar.VentanaCrearEmpleado;
 import org.proyect.Vistas.VentanasRegistrar.VentanaCrearAsistencia;
 
@@ -22,11 +24,14 @@ public class Main {
     static VentanaCrearAsistencia ventana3 = new VentanaCrearAsistencia();
     static ControladorCrearAsistencia controlador4 = new ControladorCrearAsistencia(ventana3);
 
+    static VentanaLogin ventanaL = new VentanaLogin();
+    static ControladorLogin controladorL = ControladorLogin.singletonGenerador(ventanaL);
 
     public static void main(String[] args) throws Exception {
-        controlador1.iniciarVentana();// Listar Empleados
+        /*controlador1.iniciarVentana();// Listar Empleados
         controlador2.iniciarVentana();// Listar Asistencias
         controlador3.iniciarVentana();// Crear Empleado
-        controlador4.iniciarVentana();// Crear Asistencia
+        controlador4.iniciarVentana();// Crear Asistencia*/
+        controladorL.iniciarVentana();
     }
 }
