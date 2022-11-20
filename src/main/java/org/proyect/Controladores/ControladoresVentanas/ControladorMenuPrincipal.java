@@ -37,16 +37,16 @@ public class ControladorMenuPrincipal extends Controlador {
     }
 
     private void ventanaBuscarAsistencias(){
-
+        this.ventanas.listarAsistencias.iniciarVentana();
     }
     private void ventanaBuscarEmpleados(){
-
+        this.ventanas.listarEmpleados.iniciarVentana();
     }
     private void VentanaCrearAsistencia(){
-
+        this.ventanas.crearAsistencia.iniciarVentana();
     }
     private void ventanaCrearEmpleado(){
-
+        this.ventanas.crearUsuario.iniciarVentana();
     }
     private void salir(){
         this.ventana.cerrar();

@@ -57,7 +57,7 @@ public class VentanaCrearAsistencia extends javax.swing.JFrame implements Ventan
         jTableBusqueda = new javax.swing.JTable();
         jComboBoxParametro = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 700));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 700));

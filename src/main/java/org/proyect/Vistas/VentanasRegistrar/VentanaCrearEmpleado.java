@@ -63,7 +63,7 @@ public class VentanaCrearEmpleado extends javax.swing.JFrame implements Ventana 
         jButtonRegistrar = new javax.swing.JButton();
         jComboBoxDepartamento = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));

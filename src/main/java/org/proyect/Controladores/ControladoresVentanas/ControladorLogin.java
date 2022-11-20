@@ -11,8 +11,8 @@ import java.awt.*;
 public class ControladorLogin extends Controlador {
     public static ControladorLogin SingletonInstance = null;
 
-    VentanaMenuPrincipal ventanaM = new VentanaMenuPrincipal();
-    ControladorMenuPrincipal controladorMP = new ControladorMenuPrincipal(ventanaM);
+    VentanaMenuPrincipal ventanaMenu = new VentanaMenuPrincipal();
+    ControladorMenuPrincipal controladorMenuPrincipal = new ControladorMenuPrincipal(ventanaMenu);
 
     JPasswordField jPasswordFieldContrasenia;
     JTextField jTextFieldDni;
@@ -39,7 +39,7 @@ public class ControladorLogin extends Controlador {
         String dniIngresado = this.jTextFieldDni.getText().trim();
         String contrasenaIngresado = (String.valueOf(this.jPasswordFieldContrasenia.getPassword())).trim();
         if(Operaciones.verificarUsuario(dniIngresado, contrasenaIngresado)){
-            controladorMP.iniciarVentana();
+            controladorMenuPrincipal.iniciarVentana();
             ventana.cerrar();
         }else{
             javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Usuario o contraseña Incorrecto");

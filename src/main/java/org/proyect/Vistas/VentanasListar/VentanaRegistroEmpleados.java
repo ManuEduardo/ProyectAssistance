@@ -63,7 +63,7 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
         jButtonOrdenar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
@@ -112,7 +112,7 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
         panel1.add(jCBBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 22, 170, 29));
 
         jCBMetodo.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jCBMetodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LinealSearch ", "BinarySearch " }));
+        jCBMetodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Secuencial ", "Binaria " }));
         panel1.add(jCBMetodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 101, 170, 30));
 
         jTFIngresar.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
@@ -207,16 +207,14 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
