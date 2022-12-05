@@ -1,6 +1,5 @@
 package org.proyect.Controladores.Algoritmos.Ordenamiento;
 
-
 import org.proyect.Modelos.Atributo;
 
 import java.util.ArrayList;
@@ -24,11 +23,11 @@ public class InsertionSort implements Ordenar {
         for (int i = 1; i < lista.size(); i++) {
             for (int j = i; j > 0; j--) {
                 Atributo key = lista.get(j);
-                int r = j-1;
-                Date primero = (Date)(lista.get(r).ObtenerAtributo(parametro));
-                Date segundo = (Date)(lista.get(j).ObtenerAtributo(parametro));
+                int r = j - 1;
+                Date primero = (Date) (lista.get(r).ObtenerAtributo(parametro));
+                Date segundo = (Date) (lista.get(j).ObtenerAtributo(parametro));
                 int Datos = primero.compareTo(segundo);
-                if (Datos>0) {
+                if (Datos > 0) {
                     lista.set(j, lista.get(j - 1));
                     lista.set(j - 1, key);
                 }
@@ -38,22 +37,22 @@ public class InsertionSort implements Ordenar {
     }
 
     private ArrayList<Object> ordenarString(ArrayList<Atributo> lista, String parametro) {
-        int largo = lista.size();
 
         for (int i = 1; i < lista.size(); i++) {
             for (int j = i; j > 0; j--) {
                 Atributo key = lista.get(j);
-                int r = j-1;
+                int r = j - 1;
                 String primero = String.valueOf(lista.get(r).ObtenerAtributo(parametro));
                 String segundo = String.valueOf(lista.get(j).ObtenerAtributo(parametro));
                 int compare = primero.compareTo(segundo);
 
-                if (compare>0) {
+                if (compare > 0) {
                     lista.set(j, lista.get(j - 1));
                     lista.set(j - 1, key);
                 }
             }
-        } return new ArrayList<>(lista);
+        }
+        return new ArrayList<>(lista);
     }
 
     private ArrayList<Object> ordenarInt(ArrayList<Atributo> lista, String parametro) {
@@ -62,9 +61,8 @@ public class InsertionSort implements Ordenar {
         for (int i = 1; i < largo; ++i) {
             Atributo key = lista.get(i);
             int j = i - 1;
-            while (j >= 0 && (Integer) lista.get(j).ObtenerAtributo(parametro) >
-                    (Integer) key.ObtenerAtributo(parametro)
-            ) {
+            while (j >= 0
+                    && (Integer) lista.get(j).ObtenerAtributo(parametro) > (Integer) key.ObtenerAtributo(parametro)) {
                 lista.set(j + 1, lista.get(j));
                 j = j - 1;
             }
@@ -72,6 +70,5 @@ public class InsertionSort implements Ordenar {
         }
         return new ArrayList<>(lista);
     }
-
 
 }

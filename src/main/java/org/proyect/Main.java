@@ -1,5 +1,6 @@
 package org.proyect;
 
+import org.proyect.Controladores.BaseDatos.Conexion;
 import org.proyect.Controladores.ControladoresVentanas.ControladorLogin;
 import org.proyect.Vistas.VentanasPrincipales.VentanaLogin;
 
@@ -10,5 +11,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         controladorL.iniciarVentana();
+
+        Conexion cn = new Conexion();
+        cn.makeConnection();
     }
 }

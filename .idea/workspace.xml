@@ -6,17 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee07f-de6d-4066-b1f3-bcacbac1cf4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorMenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorMenuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Conexion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroAsistencias.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroAsistencias.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroAsistencias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroEmpleados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroEmpleados.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroEmpleados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearAsistencia.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearAsistencia.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearAsistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearAsistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearEmpleado.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearEmpleado.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasRegistrar/VentanaCrearEmpleado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +123,8 @@
       <workItem from="1668729489614" duration="4608000" />
       <workItem from="1668737546120" duration="3749000" />
       <workItem from="1668910842426" duration="951000" />
+      <workItem from="1669252122436" duration="590000" />
+      <workItem from="1670184619827" duration="14133000" />
     </task>
     <servers />
   </component>
