@@ -28,6 +28,7 @@ public class Empleado extends Usuario{
         if (atributo.equals("nombre")) return getNombre();
         if (atributo.equals("email")) return getEmail();
         if (atributo.equals("departamento")) return getDepartamento();
+        if (atributo.equals("contrasena")) return getContrasena();
         return null;
     }
 }

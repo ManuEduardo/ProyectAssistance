@@ -101,7 +101,6 @@ public class ControladorCrearUsuario extends Controlador {
         //fin de comprobadores
         Empleado nuevoEmpleado = new Empleado(Integer.parseInt(dni), nombre, email, contrasena1, departamento);
         UsDao.create(nuevoEmpleado);
-        javax.swing.JOptionPane.showMessageDialog((Component) ventana,"El usuario se a creado");
     }
 
     @Override

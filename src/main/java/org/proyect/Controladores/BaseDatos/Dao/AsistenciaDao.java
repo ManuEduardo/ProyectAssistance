@@ -6,7 +6,7 @@ import org.proyect.Modelos.Atributo;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class AsistenciaDao implements Create, Delete {
+public class AsistenciaDao implements Create{
     // Creas el generador usando patron singleton
     GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
     // crea lista
@@ -17,6 +17,5 @@ public class AsistenciaDao implements Create, Delete {
         ArrayList<Atributo> listaNueva = new ArrayList<>(lista);
         // Actualiza la lista
         generador.actualizarListaAsistencias(listaNueva);
-
     }
 }

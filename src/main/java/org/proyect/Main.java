@@ -11,8 +11,5 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         controladorL.iniciarVentana();
-
-        Conexion cn = new Conexion();
-        cn.makeConnection();
     }
 }

@@ -303,6 +303,10 @@ COPY public.empleado (id, id_departamento, nombre, email, contrasena) FROM stdin
 78239198	1	Carmen Aguinaga	caraqui@gmail.com	ungato
 16789823	3	Pablo Inglesias	pabing@hotmail.com	peliculas
 17489502	8	Jorge Perales	jorper@hotmail.com	salmon
+22222222	6	Roberto Martinez	micorreorb@live.com	admin456
+16726028	8	Monica	correomonica@gmail.com	monica75
+25298767	3	Raul	raulito@live.com	contrasena
+17895783	7	Julia	julita@hotmail.com	contabilidad
 \.
 
 

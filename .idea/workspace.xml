@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bee07f-de6d-4066-b1f3-bcacbac1cf4b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Operaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Operaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/AsistenciaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/AsistenciaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Crear/ControladorCrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Crear/ControladorCrearUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Usuario/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Usuario/Empleado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +128,9 @@
       <workItem from="1670184619827" duration="14133000" />
       <workItem from="1670249208667" duration="603000" />
       <workItem from="1670287225738" duration="5789000" />
+      <workItem from="1670338517531" duration="53000" />
+      <workItem from="1670351165432" duration="1241000" />
+      <workItem from="1670355922452" duration="4726000" />
     </task>
     <servers />
   </component>
