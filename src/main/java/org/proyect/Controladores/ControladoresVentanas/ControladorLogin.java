@@ -38,12 +38,26 @@ public class ControladorLogin extends Controlador {
     private void loguear(){
         String dniIngresado = this.jTextFieldDni.getText().trim();
         String contrasenaIngresado = (String.valueOf(this.jPasswordFieldContrasenia.getPassword())).trim();
+        if (!verificarCamposLogic(dniIngresado, contrasenaIngresado) ) return;
         if(Operaciones.verificarUsuario(dniIngresado, contrasenaIngresado)){
             controladorMenuPrincipal.iniciarVentana();
             ventana.cerrar();
-        }else{
-            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Usuario o contraseña Incorrecto");
+            javax.swing.JOptionPane.showMessageDialog(null,"Logueado");
         }
+    }
+
+    private boolean verificarCamposLogic(String dni, String contrasena){
+        if(dni.equals("")||contrasena.equals("")){
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Llene todos los campos");
+            return false;
+        }
+        try {
+            Integer.parseInt(dni);
+        }catch (NumberFormatException e){
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Tinene que ingresar un número en el dni");
+            return false;
+        }
+        return true;
     }
 
     @Override
