@@ -22,6 +22,7 @@ public class InstanciaEmpleadosAsistencias {
     }
     public void actualizarListaAsistencias(ArrayList<Atributo> arrayList){
         this.listaAsistenciasArrayList = new ArrayList<>(arrayList);
+        this.listaAsistenciasArrayList = Operaciones.generarAsistencias();
     }
 
     private InstanciaEmpleadosAsistencias() {

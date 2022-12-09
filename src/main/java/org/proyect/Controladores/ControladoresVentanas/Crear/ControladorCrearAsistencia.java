@@ -39,7 +39,7 @@ public class ControladorCrearAsistencia extends Controlador {
         caracteristicas.add("id");
         caracteristicas.add("empleado");
         caracteristicas.add("fechaformateada");
-        caracteristicas.add("horaformateada");
+        caracteristicas.add("hora");
 
         ventana.jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -73,8 +73,7 @@ public class ControladorCrearAsistencia extends Controlador {
             return;
         }
         funcionesTablaLinkedList.buscarTabla(jTableBusqueda, listaInicial, caracteristicas, tipoParametroBuscar, parametroBuscar);
-        int respuesta = -1;
-        respuesta = funcionesTablaLinkedList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,parametroBuscar);
+        int respuesta = funcionesTablaLinkedList.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,parametroBuscar);
         if(respuesta == -1) javax.swing.JOptionPane.showMessageDialog((Component) ventana,"BUSQUEDA NO ENCONTRADA");
     }
 
@@ -88,6 +87,7 @@ public class ControladorCrearAsistencia extends Controlador {
             javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Ingrese parametros");
             return;
         }
+
 
         BusquedaLinkedList buscar = new BusquedaLinkedList();
         //Busca el dni
@@ -106,9 +106,10 @@ public class ControladorCrearAsistencia extends Controlador {
         }
         //Crea la asistencia
         Asistencia nuevaAsistencia = new Asistencia(listaInicial.size(), empleado.getNombre(), fechaActual);
+
         //Agreda la asistencia usando el dao
+        nuevaAsistencia.setIdEmpleado(Integer.parseInt(dni));
         AsDao.create(nuevaAsistencia);
-        javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Asistencia Registrada");
         this.listaInicial = new LinkedList<>(generador.getAsistencias());
     }
 

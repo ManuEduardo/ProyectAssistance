@@ -40,7 +40,7 @@ public class ControladorListarAsistencias extends Controlador {
         caracteristicas.add("id");
         caracteristicas.add("empleado");
         caracteristicas.add("fechaformateada");
-        caracteristicas.add("horaformateada");
+        caracteristicas.add("hora");
 
         ventana.jButtonListar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override

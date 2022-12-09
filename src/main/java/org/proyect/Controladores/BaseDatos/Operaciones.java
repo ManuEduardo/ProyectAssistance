@@ -57,7 +57,7 @@ public class Operaciones {
                 String departamento = resultado.getString(2);
                 String nombre = resultado.getString(3);
                 String email = resultado.getString(4);
-                String contrasena = resultado.getString(4);
+                String contrasena = resultado.getString(5);
                 Empleado empleado = new Empleado(id, nombre, email, contrasena, departamento);
                 listaEmpleados.add(empleado);
             }
@@ -71,7 +71,7 @@ public class Operaciones {
         ArrayList<Atributo> listarAsistencias = new ArrayList<>();
 
         conexion = new Conexion();
-        String query = "select id, (select nombre from empleado E where E.id = A.id_empleado), fecha from asistencia A;";
+        String query = "select id, (select nombre from empleado E where E.id = A.id_empleado), fecha, hora from asistencia A;";
         try{
             acceso = conexion.makeConnection();
             preState = acceso.prepareStatement(query);
@@ -80,7 +80,8 @@ public class Operaciones {
                 int id = resultado.getInt(1);
                 String nombreEmpleado = resultado.getString(2);
                 Date fecha = resultado.getDate(3);
-                Asistencia asistencia = new Asistencia(id, nombreEmpleado, fecha);
+                String hora = String.valueOf(resultado.getString(4));
+                Asistencia asistencia = new Asistencia(id, nombreEmpleado, fecha, hora);
                 listarAsistencias.add(asistencia);
             }
         }catch(Exception e){

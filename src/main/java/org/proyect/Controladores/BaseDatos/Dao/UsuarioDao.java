@@ -14,10 +14,8 @@ public class UsuarioDao implements Create{
     InstanciaEmpleadosAsistencias generador = InstanciaEmpleadosAsistencias.singletonGenerador();
     LinkedList<Atributo> lista = new LinkedList<>(generador.getEmpleados());
 
-    private Conexion conexionUsuario = new Conexion();
     private Connection acceso;
     private PreparedStatement preState;
-    private ResultSet resultado;
 
     @Override
     public void create(Atributo atributo) {

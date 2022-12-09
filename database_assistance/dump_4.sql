@@ -179,7 +179,8 @@ SET default_table_access_method = heap;
 CREATE TABLE public.asistencia (
     id integer NOT NULL,
     id_empleado integer NOT NULL,
-    fecha date NOT NULL
+    fecha date NOT NULL,
+    hora character varying(15) NOT NULL
 );
 
 
@@ -274,9 +275,9 @@ ALTER TABLE ONLY public.departamento ALTER COLUMN id SET DEFAULT nextval('public
 -- Data for Name: asistencia; Type: TABLE DATA; Schema: public; Owner: root
 --
 
-COPY public.asistencia (id, id_empleado, fecha) FROM stdin;
-2	11111111	2022-12-09
-3	72032363	2022-12-05
+COPY public.asistencia (id, id_empleado, fecha, hora) FROM stdin;
+9	11111111	2022-09-01	15:08:23
+10	72032363	2022-12-09	17:58:55
 \.
 
 
@@ -316,7 +317,7 @@ COPY public.empleado (id, id_departamento, nombre, email, contrasena) FROM stdin
 -- Name: asistencia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
-SELECT pg_catalog.setval('public.asistencia_id_seq', 3, true);
+SELECT pg_catalog.setval('public.asistencia_id_seq', 10, true);
 
 
 --
