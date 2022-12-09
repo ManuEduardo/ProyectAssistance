@@ -1,7 +1,7 @@
 package org.proyect.Controladores.BaseDatos.Dao;
 
 import org.proyect.Controladores.BaseDatos.Conexion;
-import org.proyect.GenerarEmpleadosAsistencias;
+import org.proyect.Modelos.InstanciaEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
 
 import java.sql.Connection;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class UsuarioDao implements Create{
-    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
-    LinkedList<Atributo> lista = new LinkedList<>(generador.generarEmpleados());
+    InstanciaEmpleadosAsistencias generador = InstanciaEmpleadosAsistencias.singletonGenerador();
+    LinkedList<Atributo> lista = new LinkedList<>(generador.getEmpleados());
 
     private Conexion conexionUsuario = new Conexion();
     private Connection acceso;

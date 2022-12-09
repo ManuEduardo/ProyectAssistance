@@ -275,6 +275,8 @@ ALTER TABLE ONLY public.departamento ALTER COLUMN id SET DEFAULT nextval('public
 --
 
 COPY public.asistencia (id, id_empleado, fecha) FROM stdin;
+2	11111111	2022-12-09
+3	72032363	2022-12-05
 \.
 
 
@@ -314,7 +316,7 @@ COPY public.empleado (id, id_departamento, nombre, email, contrasena) FROM stdin
 -- Name: asistencia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
-SELECT pg_catalog.setval('public.asistencia_id_seq', 1, false);
+SELECT pg_catalog.setval('public.asistencia_id_seq', 3, true);
 
 
 --

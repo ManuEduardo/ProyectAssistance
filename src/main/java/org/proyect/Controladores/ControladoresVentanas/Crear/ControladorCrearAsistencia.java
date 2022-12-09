@@ -4,7 +4,7 @@ import org.proyect.Controladores.Algoritmos.Busqueda.BusquedaLinkedList;
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaLinkedList;
 import org.proyect.Controladores.BaseDatos.Dao.AsistenciaDao;
 import org.proyect.Controladores.Controlador;
-import org.proyect.GenerarEmpleadosAsistencias;
+import org.proyect.Modelos.InstanciaEmpleadosAsistencias;
 import org.proyect.Modelos.Asistencia;
 import org.proyect.Modelos.Atributo;
 import org.proyect.Modelos.Usuario.Empleado;
@@ -18,8 +18,8 @@ import java.util.LinkedList;
 
 public class ControladorCrearAsistencia extends Controlador {
 
-    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador(); // Patron Singelton
-    LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarAsistencias()); // Generas las Listas
+    InstanciaEmpleadosAsistencias generador = InstanciaEmpleadosAsistencias.singletonGenerador(); // Patron Singelton
+    LinkedList<Atributo> listaInicial = new LinkedList<>(generador.getAsistencias()); // Generas las Listas
     FuncionesTablaLinkedList funcionesTablaLinkedList = new FuncionesTablaLinkedList();
     AsistenciaDao AsDao = new AsistenciaDao();
     JComboBox<String> jComboBoxParametro;
@@ -79,7 +79,7 @@ public class ControladorCrearAsistencia extends Controlador {
     }
 
     private void registrar() throws Exception {
-        LinkedList<Atributo> listaInicialEmpleados = new LinkedList<>(generador.generarEmpleados());
+        LinkedList<Atributo> listaInicialEmpleados = new LinkedList<>(generador.getEmpleados());
         String dni = (jTextFieldDni.getText().trim());
         String contrasena = (String.valueOf((jPasswordFieldContrasenia.getPassword()))).trim();
         Date fechaActual =  new Date();
@@ -109,7 +109,7 @@ public class ControladorCrearAsistencia extends Controlador {
         //Agreda la asistencia usando el dao
         AsDao.create(nuevaAsistencia);
         javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Asistencia Registrada");
-        this.listaInicial = new LinkedList<>(generador.generarAsistencias());
+        this.listaInicial = new LinkedList<>(generador.getAsistencias());
     }
 
     @Override

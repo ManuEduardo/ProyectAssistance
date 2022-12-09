@@ -42,7 +42,6 @@ public class ControladorLogin extends Controlador {
         if(Operaciones.verificarUsuario(dniIngresado, contrasenaIngresado)){
             controladorMenuPrincipal.iniciarVentana();
             ventana.cerrar();
-            javax.swing.JOptionPane.showMessageDialog(null,"Logueado");
         }
     }
 

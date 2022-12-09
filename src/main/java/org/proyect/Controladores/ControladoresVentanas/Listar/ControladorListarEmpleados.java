@@ -1,7 +1,7 @@
 package org.proyect.Controladores.ControladoresVentanas.Listar;
 
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
-import org.proyect.GenerarEmpleadosAsistencias;
+import org.proyect.Modelos.InstanciaEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroEmpleados;
 import org.proyect.Controladores.Controlador;
@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 
 public class ControladorListarEmpleados extends Controlador{
-    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
+    InstanciaEmpleadosAsistencias generador = InstanciaEmpleadosAsistencias.singletonGenerador();
     //generador de arraylist para prueba
-    ArrayList<Atributo> listaInicial = generador.generarEmpleados();
+    ArrayList<Atributo> listaInicial = generador.getEmpleados();
 
     FuncionesTablaArrayList funcionesTablaArrayList = new FuncionesTablaArrayList();
     //Componentes de la ventana
@@ -77,7 +77,7 @@ public class ControladorListarEmpleados extends Controlador{
     }
 
     private void listarEmpleados(){
-        listaInicial = generador.generarEmpleados();
+        listaInicial = generador.getEmpleados();
         funcionesTablaArrayList.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
     private void ordenamientoTabla() throws Exception {
@@ -91,7 +91,7 @@ public class ControladorListarEmpleados extends Controlador{
         funcionesTablaArrayList.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
     }
     private void bucarEmpleados() throws Exception {
-        listaInicial = generador.generarEmpleados();
+        listaInicial = generador.getEmpleados();
         String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
         if(tipoParametroBuscar.equals("dni")) tipoParametroBuscar = "id";
         String algoritmoBusqueda = ((String) jCBMetodo.getSelectedItem()).trim();

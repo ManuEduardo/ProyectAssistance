@@ -2,7 +2,7 @@ package org.proyect.Controladores.ControladoresVentanas.Listar;
 
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaArrayList;
 import org.proyect.Controladores.Controlador;
-import org.proyect.GenerarEmpleadosAsistencias;
+import org.proyect.Modelos.InstanciaEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 
@@ -11,9 +11,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ControladorListarAsistencias extends Controlador {
-    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
+    InstanciaEmpleadosAsistencias generador = InstanciaEmpleadosAsistencias.singletonGenerador();
     //generador de arraylist para prueba
-    ArrayList<Atributo> listaInicial = generador.generarAsistencias();
+    ArrayList<Atributo> listaInicial = generador.getAsistencias();
 
     FuncionesTablaArrayList funcionesTablaArrayList = new FuncionesTablaArrayList();
     //Componentes de la ventana
@@ -76,12 +76,12 @@ public class ControladorListarAsistencias extends Controlador {
     }
 
     private void listarAsistencias(){
-        this.listaInicial = generador.generarAsistencias();
+        this.listaInicial = generador.getAsistencias();
         funcionesTablaArrayList.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
 
     private void ordenamientoTabla() throws Exception {
-        listaInicial = generador.generarAsistencias();
+        listaInicial = generador.getAsistencias();
         String algoritmo = (String) jCBAlgoritmo.getSelectedItem();
         String criterio = (String) jCBCriterio.getSelectedItem();
         criterio = criterio.toLowerCase();
@@ -96,7 +96,7 @@ public class ControladorListarAsistencias extends Controlador {
 
 
     private void bucarAsistencias() throws Exception {
-        listaInicial = generador.generarAsistencias();
+        listaInicial = generador.getAsistencias();
         String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
         if(tipoParametroBuscar.equals("fecha")) tipoParametroBuscar = "fechaformateada";
         String algoritmoBusqueda = ((String) jCBMetodo.getSelectedItem()).trim();

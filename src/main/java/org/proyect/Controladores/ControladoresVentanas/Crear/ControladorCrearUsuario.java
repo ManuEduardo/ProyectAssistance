@@ -3,7 +3,7 @@ package org.proyect.Controladores.ControladoresVentanas.Crear;
 import org.proyect.Controladores.Algoritmos.Funciones.FuncionesTablaLinkedList;
 import org.proyect.Controladores.BaseDatos.Dao.UsuarioDao;
 import org.proyect.Controladores.Controlador;
-import org.proyect.GenerarEmpleadosAsistencias;
+import org.proyect.Modelos.InstanciaEmpleadosAsistencias;
 import org.proyect.Modelos.Atributo;
 import org.proyect.Modelos.Usuario.Empleado;
 import org.proyect.Vistas.VentanasRegistrar.VentanaCrearEmpleado;
@@ -15,8 +15,8 @@ import java.util.LinkedList;
 
 public class ControladorCrearUsuario extends Controlador {
 
-    GenerarEmpleadosAsistencias generador = GenerarEmpleadosAsistencias.singletonGenerador();
-    LinkedList<Atributo> listaInicial = new LinkedList<>(generador.generarEmpleados());
+    InstanciaEmpleadosAsistencias generador = InstanciaEmpleadosAsistencias.singletonGenerador();
+    LinkedList<Atributo> listaInicial = new LinkedList<>(generador.getEmpleados());
     FuncionesTablaLinkedList funcionesTablaLinkedList = new FuncionesTablaLinkedList();
     UsuarioDao UsDao = new UsuarioDao();
     JComboBox<String> jComboBoxParametro;
@@ -54,7 +54,7 @@ public class ControladorCrearUsuario extends Controlador {
         ventana.jButtonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listaInicial = new LinkedList<>(generador.generarEmpleados());
+                listaInicial = new LinkedList<>(generador.getEmpleados());
                 try {
                     buscar();
                 } catch (Exception e) {
