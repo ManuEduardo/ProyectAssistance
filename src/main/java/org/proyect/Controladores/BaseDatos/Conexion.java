@@ -18,7 +18,6 @@ public class Conexion {
         try {
             Class.forName("org.postgresql.Driver");
             conect = DriverManager.getConnection(url, user, pass);
-            System.out.println("Conectado");
         }catch(Exception e){
             System.out.println(e.toString());
         }

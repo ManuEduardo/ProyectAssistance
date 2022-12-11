@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class FactorySearch {
     private Buscar devolverAlgoritmoBusqueda(String algoritmo){
         switch (algoritmo) {
-            case "LinealSearch" -> {
-                System.out.println("LS");
+            case "Secuencial" -> {
+                System.out.println("LinealSearch");
                 return new LinealSearch();
             }
-            case "BinarySearch" -> {
-                System.out.println("BS");
+            case "Binaria" -> {
+                System.out.println("BinarySearch");
                 return new BinarySearch();
             }
             default -> {

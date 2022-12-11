@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee07f-de6d-4066-b1f3-bcacbac1cf4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/AsistenciaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/AsistenciaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Operaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Operaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Crear/ControladorCrearAsistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Crear/ControladorCrearAsistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Listar/ControladorListarAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/Listar/ControladorListarAsistencias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Asistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/Asistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/InstanciaEmpleadosAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Modelos/InstanciaEmpleadosAsistencias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_assistance/dump_4.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/FactorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/FactorySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/BaseDatos/Conexion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +131,7 @@
       <workItem from="1670355922452" duration="4726000" />
       <workItem from="1670557968820" duration="5377000" />
       <workItem from="1670609829829" duration="15650000" />
+      <workItem from="1670732666580" duration="5566000" />
     </task>
     <servers />
   </component>
